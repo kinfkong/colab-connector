@@ -1,7 +1,7 @@
 #!/bin/bash
 rm -rf dist
-mkdir -p dist/src
-cp *.txt *.png *.js *.html dist/src
+mkdir -p dist/colab-connector
+cp *.txt *.png *.js *.html dist/colab-connector
 cd dist
-zip colab-connector.zip src
+zip -r colab-connector.zip colab-connector
 cd -
