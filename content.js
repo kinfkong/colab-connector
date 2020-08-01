@@ -1,4 +1,4 @@
-let gEnableAutoConnect = true
+let gEnableAutoConnect = false
 let gColabNetworkAvailable = true
 let gColabConnected = false
 

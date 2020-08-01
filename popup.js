@@ -12,13 +12,14 @@ chrome.runtime.onMessage.addListener(function(msg, sender, sendResponse){
     } else {
         $('.message').text('连接已断开')
     }
+    $("#autoconnect").attr('checked', currentStatus.gEnableAutoConnect)
   }
 });
 
 $("#autoconnect").change(function() {
     console.log('check box clicked')
     const gEnableAutoConnect = this.checked;
-    chrome.tabs.query({currentWindow: true}, function(tabs) {
+    chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
         console.log(tabs)
         for (const tab of tabs) {
             if (urlRegex.test(tab.url)) {
