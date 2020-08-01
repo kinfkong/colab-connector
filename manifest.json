@@ -1,0 +1,23 @@
+{
+    "name": "Colab Connector",
+    "description": "Avoiding Colab disconnections",
+    "version": "0.1",
+    "background": {
+      "scripts": ["background.js"],
+      "persistent": false
+    },
+    "content_scripts": [{
+      "matches": ["*://colab.research.google.com/*"],
+      "js": ["content.js"]
+    }],
+    "permissions": [
+      "tabs"
+    ],
+    "browser_action": {
+        "default_title": "Colab Connector",
+        "default_icon": "colab-connector-icon.png",
+        "default_popup": "popup.html"
+    },
+
+    "manifest_version": 2
+  }
